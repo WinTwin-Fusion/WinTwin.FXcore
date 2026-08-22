@@ -1,12 +1,22 @@
 # WinTwin.FXcore
 
+## Important Information
+
+**WinTwin.FXcore** (_formerly WinISO ScriptFXLib_) is now an integral part of the **WinTwin.Fusion Framework**. Consequently, the library is once again under active development. At this time, using WinTwin.FXcore is neither practical nor recommended.
+
+## About
+
 > **PowerShell module for fully automated Windows 11 ISO creation, customisation, and rebuilding**
 > Using [UUP Dump](https://uupdump.net), DISM, and oscdimg.
 
 [![Module Version](https://img.shields.io/badge/version-1.00.05-blue)](CHANGELOG.md)
 [![PowerShell](https://img.shields.io/badge/PowerShell-5.1%20%7C%207.x-blue)](https://github.com/PowerShell/PowerShell)
-[![Platform](https://img.shields.io/badge/platform-Windows%2010%20%7C%2011-lightgrey)](https://www.microsoft.com/windows)
+[![Platform](https://img.shields.io/badge/platform-Windows%2011-lightgrey)](https://www.microsoft.com/windows)
+
+
+<!--
 [![License](https://img.shields.io/badge/license-Personal%20%26%20Corporate%20Use-green)](LICENSE)
+-->
 
 ---
 
