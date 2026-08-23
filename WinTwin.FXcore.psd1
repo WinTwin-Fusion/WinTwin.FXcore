@@ -49,47 +49,10 @@ RequiredAssemblies = @()
 # Functions to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no functions to export.
 FunctionsToExport = @(
         # Core / Infrastructure
-        'AppScope',
-        'InitializeEnvironment',
-        'VerifyEnvironment',
-        'CheckModuleRequirements',
-        'WinISOcore',
+        'WTFXcoreScope',
 
         # Logging
         'WriteLogMessage',
-
-        # Download helpers
-        'GitHubDownload',
-        'GetLatestPowerShellSetup',
-
-        # UUP Dump workflow
-        'DownloadUUPDump',
-        'GetUUPDumpPackage',
-        'ExtractUUPDump',
-        'CreateUUPDiso',
-        'CleanupUUPDump',
-        'RenameUUPDiso',
-        'ExtractUUPDiso',
-
-        # WIM image operations
-        'ImageIndexLookup',
-        'MountWIMimage',
-        'UnMountWIMimage',
-
-        # Registry Hive Operations
-        'LoadRegistryHive',
-        'UnloadRegistryHive',
-        'RegistryHiveAdd',
-        'RegistryHiveRem',
-        'RegistryHiveImport',
-        'RegistryHiveExport',
-        'RegistryHiveQuery',
-
-        # Appx / MSIX Package Operations
-        'GetAppxPackages',
-        'RemAppxPackages',
-        'AddAppxPackages',
-        'AppxPackageLookUp',
 
         # JSON helpers (generic, schema-agnostic)
         'wtfLoadJSON',
@@ -102,6 +65,42 @@ FunctionsToExport = @(
 
         # Console window state control
         'wtfSetCMDstate'
+
+<# THESE FUNCTIONS NEED TO BE CHECKED/REVIEWED, BEFORE IMPLEMENTIG THEM AGAIN!!
+        # Core / Infrastructure
+        'InitializeEnvironment',
+        'VerifyEnvironment',
+        'CheckModuleRequirements',
+        'WinISOcore',
+        # Download helpers
+        'GitHubDownload',
+        'GetLatestPowerShellSetup',
+        # UUP Dump workflow
+        'DownloadUUPDump',
+        'GetUUPDumpPackage',
+        'ExtractUUPDump',
+        'CreateUUPDiso',
+        'CleanupUUPDump',
+        'RenameUUPDiso',
+        'ExtractUUPDiso',
+        # WIM image operations
+        'ImageIndexLookup',
+        'MountWIMimage',
+        'UnMountWIMimage',
+        # Registry Hive Operations
+        'LoadRegistryHive',
+        'UnloadRegistryHive',
+        'RegistryHiveAdd',
+        'RegistryHiveRem',
+        'RegistryHiveImport',
+        'RegistryHiveExport',
+        'RegistryHiveQuery',
+        # Appx / MSIX Package Operations
+        'GetAppxPackages',
+        'RemAppxPackages',
+        'AddAppxPackages',
+        'AppxPackageLookUp',
+#>
 )
 
 # Cmdlets to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no cmdlets to export.
@@ -121,6 +120,16 @@ FileList = @(
 
     # Private
     'Private\OPSreturn.ps1',
+    # Public
+    'Public\wtfLoadJSON.ps1',
+    'Public\wtfLoadJSONC.ps1',
+    'Public\wtfWriteJSON.ps1',
+    'Public\wtfGetJobAction.ps1',
+    'Public\wtfSetJobAction.ps1',
+    'Public\wtfSetCMDstate.ps1'
+
+    <# THESE FUNCTIONS NEED TO BE CHECKED/REVIEWED, BEFORE IMPLEMENTIG THEM AGAIN!!
+    # Private
     'Private\Invoke-UUPRuntimeLog.ps1',
     'Private\Get-UUPLogTail.ps1',
     'Private\Test-UUPConversionPhase.ps1',
@@ -158,12 +167,7 @@ FileList = @(
     'Public\RemAppxPackages.ps1',
     'Public\AddAppxPackages.ps1',
     'Public\AppxPackageLookUp.ps1',
-    'Public\wtfLoadJSON.ps1',
-    'Public\wtfLoadJSONC.ps1',
-    'Public\wtfWriteJSON.ps1',
-    'Public\wtfGetJobAction.ps1',
-    'Public\wtfSetJobAction.ps1',
-    'Public\wtfSetCMDstate.ps1'
+#>
 )
 
 # Private data to pass to the module specified in RootModule/ModuleToProcess. This may also contain a PSData hashtable with additional module metadata used by PowerShell.
