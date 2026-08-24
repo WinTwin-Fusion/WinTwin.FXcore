@@ -1,11 +1,11 @@
-function wtfWriteJSON {
+function wtfxWriteJSON {
     <#
     .SYNOPSIS
     Writes a value into a JSON (or JSONC) file, either replacing the whole document
     or a single nested property addressed via a dot-separated key path.
 
     .DESCRIPTION
-    The wtfWriteJSON function is the generic, reusable JSON-writing primitive for the
+    The wtfxWriteJSON function is the generic, reusable JSON-writing primitive for the
     WinTwin.Fusion framework. It supports two modes:
 
       1) Whole-object mode (no -KeyPath given): the -Value parameter is serialized
@@ -44,11 +44,11 @@ function wtfWriteJSON {
     Maximum depth passed to ConvertTo-Json. Default is 20.
 
     .EXAMPLE
-    wtfWriteJSON -Path "C:\WinTwin.Fusion\Core\config.json" -Value $config
+    wtfxWriteJSON -Path "C:\WinTwin.Fusion\Core\config.json" -Value $config
     Whole-object mode: overwrites config.json with the in-memory $config object.
 
     .EXAMPLE
-    wtfWriteJSON -Path "C:\WinTwin.Fusion\Core\config.json" -KeyPath "path.root" -Value "C:\WinTwin.Fusion"
+    wtfxWriteJSON -Path "C:\WinTwin.Fusion\Core\config.json" -KeyPath "path.root" -Value "C:\WinTwin.Fusion"
     Key-path mode: updates only path.root, leaving the rest of config.json intact.
 
     .NOTES

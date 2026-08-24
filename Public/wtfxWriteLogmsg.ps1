@@ -1,10 +1,10 @@
-﻿function WriteLogMessage {
+﻿function wtfxWriteLogmsg {
     <#
     .SYNOPSIS
     Writes messages to a log file with timestamps and severity flags.
     
     .DESCRIPTION
-    The WriteLogMessage function creates or appends to a log file with formatted messages
+    The wtfxWriteLogmsg function creates or appends to a log file with formatted messages
     including timestamps and severity levels. It handles file creation, validation, and
     proper error handling through a standardized return object.
     
@@ -23,15 +23,15 @@
     Default is 0 (append) if not specified.
     
     .EXAMPLE
-    WriteLogMessage -Logfile "C:\Logs\application.log" -Message "Application started successfully"
+    wtfxWriteLogmsg -Logfile "C:\Logs\application.log" -Message "Application started successfully"
     Creates a log entry with DEBUG flag (default) and current timestamp.
     
     .EXAMPLE
-    WriteLogMessage -Logfile "C:\Logs\application.log" -Message "Configuration loaded" -Flag "INFO"
+    wtfxWriteLogmsg -Logfile "C:\Logs\application.log" -Message "Configuration loaded" -Flag "INFO"
     Creates a log entry with INFO flag and current timestamp.
     
     .EXAMPLE
-    WriteLogMessage -Logfile "C:\Logs\application.log" -Message "Critical error occurred" -Flag "ERROR" -Override 1
+    wtfxWriteLogmsg -Logfile "C:\Logs\application.log" -Message "Critical error occurred" -Flag "ERROR" -Override 1
     Overwrites the existing log file and creates a new entry with ERROR flag.
     #>
     
@@ -115,6 +115,6 @@
         return (OPSreturn -Code 0 -Message "")
     }
     catch {
-        return (OPSreturn -Code -1 -Message "Unexpected error in WriteLogMessage function: $($_.Exception.Message)")
+        return (OPSreturn -Code -1 -Message "Unexpected error in wtfxWriteLogmsg function: $($_.Exception.Message)")
     }
 }

@@ -1,11 +1,11 @@
-function wtfGetJobAction {
+function wtfxGetJobAction {
     <#
     .SYNOPSIS
     Reads a specific job/action node (or a single field of it) from the framework's
     central jobaction.json database.
 
     .DESCRIPTION
-    The wtfGetJobAction function resolves the path to Core\db\jobaction.json via
+    The wtfxGetJobAction function resolves the path to Core\db\jobaction.json via
     Core\config.json (path.root + path.appdb.actions), loads it with wtfLoadJSON,
     and returns either the full node for a given -ActionId (e.g. "wim-mount") or,
     if -Field is also supplied, only that single field's value (e.g. "path" or
@@ -28,11 +28,11 @@ function wtfGetJobAction {
     returned.
 
     .EXAMPLE
-    $result = wtfGetJobAction -FrameworkRoot "C:\WinTwin.Fusion" -ActionId "wim-mount"
+    $result = wtfxGetJobAction -FrameworkRoot "C:\WinTwin.Fusion" -ActionId "wim-mount"
     if ($result.code -eq 0) { $wimMountNode = $result.data }
 
     .EXAMPLE
-    $result = wtfGetJobAction -FrameworkRoot "C:\WinTwin.Fusion" -ActionId "wim-mount" -Field "path"
+    $result = wtfxGetJobAction -FrameworkRoot "C:\WinTwin.Fusion" -ActionId "wim-mount" -Field "path"
     if ($result.code -eq 0) { $mountPath = $result.data }
 
     .NOTES

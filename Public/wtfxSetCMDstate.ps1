@@ -1,10 +1,10 @@
-function wtfSetCMDstate {
+function wtfxSetCMDstate {
     <#
     .SYNOPSIS
     Shows, hides, or minimizes the current console (cmd/PowerShell) window.
 
     .DESCRIPTION
-    The wtfSetCMDstate function wraps the native Win32 ShowWindow API (via a small,
+    The wtfxSetCMDstate function wraps the native Win32 ShowWindow API (via a small,
     self-contained P/Invoke signature added on first use) to control the visibility
     state of the process's own console window. This is a generic, reusable
     replacement for the various framework-internal, tool-specific console-state
@@ -20,12 +20,12 @@ function wtfSetCMDstate {
       Maximize  - maximizes the window (SW_MAXIMIZE)
 
     .EXAMPLE
-    wtfSetCMDstate -State Hide
+    wtfxSetCMDstate -State Hide
     Hides the current console window (e.g. while a long-running DISM job runs in
     the background and progress is only shown in a GUI).
 
     .EXAMPLE
-    wtfSetCMDstate -State Show
+    wtfxSetCMDstate -State Show
     Restores the console window again.
 
     .NOTES

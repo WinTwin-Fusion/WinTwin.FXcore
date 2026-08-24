@@ -1,10 +1,10 @@
-function wtfLoadJSONC {
+function wtfxLoadJSONC {
     <#
     .SYNOPSIS
     Loads and parses a JSONC (JSON with Comments) file into a PowerShell object.
 
     .DESCRIPTION
-    The wtfLoadJSONC function reads a JSONC file (e.g. jobaction.jsonc), strips
+    The wtfxLoadJSONC function reads a JSONC file (e.g. jobaction.jsonc), strips
     single-line ('//') and block ('/* ... */') comments using a small state-machine
     based scanner (NOT a naive regex), and then parses the remaining, pure-JSON
     content exactly like wtfLoadJSON. The state machine tracks whether the scanner
@@ -19,7 +19,7 @@ function wtfLoadJSONC {
     Maximum depth passed to ConvertFrom-Json. Default is 20.
 
     .EXAMPLE
-    $result = wtfLoadJSONC -Path "C:\WinTwin.Fusion\Core\db\jobaction.jsonc"
+    $result = wtfxLoadJSONC -Path "C:\WinTwin.Fusion\Core\db\jobaction.jsonc"
     if ($result.code -eq 0) { $jobActions = $result.data }
 
     .NOTES
