@@ -1,11 +1,11 @@
-function wtfSetJobAction {
+function wtfxSetJobAction {
     <#
     .SYNOPSIS
     Writes a single field of a specific job/action node in the framework's central
     jobaction.json database.
 
     .DESCRIPTION
-    The wtfSetJobAction function resolves the path to Core\db\jobaction.json via
+    The wtfxSetJobAction function resolves the path to Core\db\jobaction.json via
     Core\config.json (path.root + path.appdb.actions) - the exact same resolution
     logic used by wtfGetJobAction, so both functions always agree on the file
     location - and updates a single, dot-separated field (e.g. "path" or
@@ -32,7 +32,7 @@ function wtfSetJobAction {
     The new value to write into the given field.
 
     .EXAMPLE
-    wtfSetJobAction -FrameworkRoot "C:\WinTwin.Fusion" -ActionId "wim-mount" -Field "path" -Value "C:\WinTwin.Fusion\Mount"
+    wtfxSetJobAction -FrameworkRoot "C:\WinTwin.Fusion" -ActionId "wim-mount" -Field "path" -Value "C:\WinTwin.Fusion\Mount"
 
     .NOTES
     Part of: WinTwin.FXcore
