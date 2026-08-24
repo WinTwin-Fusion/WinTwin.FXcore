@@ -51,4 +51,8 @@ The following files were intentionally excluded from the synchronization:
 A metadata file was generated at:
 
 ```text
+<<<<<<< Updated upstream
 ${TARGET_PATH}/.wtfxc-sync.json
+=======
+${TARGET_PATH}/.usmtc-sync.json
+>>>>>>> Stashed changes

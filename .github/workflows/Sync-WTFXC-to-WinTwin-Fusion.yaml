@@ -21,7 +21,10 @@ name: Sync WinTwin.FXcore to WinTwin.Fusion
 # Ausgeschlossen vom Sync:
 #   - .git
 #   - .gitignore
+<<<<<<< Updated upstream
 #   - ducc.wm.changelog.md
+=======
+>>>>>>> Stashed changes
 #
 # Zusätzlich:
 #   - erzeugt .wtfxc-sync.json im Zielordner
@@ -84,7 +87,11 @@ permissions:
 # =============================================================================
 # Concurrency
 #
+<<<<<<< Updated upstream
 # Verhindert, dass mehrere WTFXC-Syncs gleichzeitig dieselbe Zielbranch verändern.
+=======
+# Verhindert, dass mehrere USMTC-Syncs gleichzeitig dieselbe Zielbranch verändern.
+>>>>>>> Stashed changes
 # =============================================================================
 
 concurrency:
@@ -169,7 +176,11 @@ jobs:
         with:
           repository: ${{ env.TARGET_REPOSITORY }}
           ref: ${{ env.TARGET_BASE_BRANCH }}
+<<<<<<< Updated upstream
           token: ${{ secrets.TOKEN_WINTWIN_FUSION_PR_WTFXC }}
+=======
+          token: ${{ secrets.WINTWIN_FUSION_COMPONENT_SYNC }}
+>>>>>>> Stashed changes
           path: framework
           fetch-depth: 0
 
@@ -179,6 +190,7 @@ jobs:
       # Diese Angaben erscheinen später im Commit des Zielrepositories.
       # -----------------------------------------------------------------------
 
+<<<<<<< Updated upstream
       #- name: Configure Git identity
       #  run: |
       #    git config --global user.name "WinTwin Fusion Framework Bot"
@@ -187,6 +199,12 @@ jobs:
         run: |
           git config --global user.name "WinTwin Fusion Framework Bot"
           git config --global user.email "actions@github.com"
+=======
+      - name: Configure Git identity
+        run: |
+          git config --global user.name "WinTwin Fusion Framework Bot"
+          git config --global user.email "wintwin.fusion.framework@actions.github.com"
+>>>>>>> Stashed changes
 
       # -----------------------------------------------------------------------
       # 5. Zielbranch vorbereiten
@@ -576,7 +594,11 @@ jobs:
         if: steps.changes.outputs.has_changes == 'true'
         working-directory: framework
         env:
+<<<<<<< Updated upstream
           GH_TOKEN: ${{ secrets.TOKEN_WINTWIN_FUSION_PR_WTFXC }}
+=======
+          GH_TOKEN: ${{ secrets.WINTWIN_FUSION_COMPONENT_SYNC }}
+>>>>>>> Stashed changes
         run: |
           PR_TITLE="$(cat .sync_pr_title.txt)"
 
